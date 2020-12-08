@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap");
+
+      body {
+        background-color: gray;
+      }
+
+      .box {
+        background-color: white;
+        border: 2px solid pink;
+        margin: auto;
+        width: 200px;
+        position: relative;
+        top: 300px;
+        box-shadow: black 6px 6px 10px;
+        text-align: center;
+        font-family: "Orbitron", sans-serif;
+      }
+
+      .btn {
+        position: relative;
+        margin: auto;
+        width: 200px;
+        top: 400px;
+        text-align: center;
+      }
+      button {
+        margin: 10px 15px;
+        padding: 5px 10px;
+        background-color: rgb(247, 251, 255);
+        border: 2px solid rgb(117, 232, 240);
+        font-family: "Amatic SC", cursive;
+        font-size: large;
+      }
+
+      button:hover {
+        background-color: rgb(181, 231, 179);
+      }
+    </style>
+
+    <script>
+      function fun() {
+        mydate = new Date();
+        let time = `${mydate.getHours()}:${mydate.getMinutes()}:${mydate.getSeconds()}`;
+
+        document.getElementById("clk").innerHTML = time;
+      }
+      function start() {
+        myset = setInterval(fun, 1000);
+      }
+
+      function stop() {
+        clearInterval(myset);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="box">
+      <h2 id="clk"></h2>
+    </div>
+    <div class="btn">
+      <button onclick="start()">START</button>
+      <button onclick="stop()">STOP</button>
+    </div>
+  </body>
+</html>
